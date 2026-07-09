@@ -128,6 +128,12 @@
             const itemsList = document.getElementById('itemsList');
             const emptyMessage = document.getElementById('emptyMessage');
             
+            if (window.sharedText) {
+                document.getElementById('backLink').textContent = window.sharedText.backLabel || document.getElementById('backLink').textContent;
+                emptyMessage.textContent = window.sharedText.emptyItemsMessage || emptyMessage.textContent;
+                document.getElementById('footerText').textContent = window.sharedText.footer || document.getElementById('footerText').textContent;
+            }
+            
             if (!window.subjectItems || window.subjectItems.length === 0) {
                 itemsList.style.display = 'none';
                 return;
