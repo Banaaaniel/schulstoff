@@ -1,5 +1,200 @@
-<html>
-<i>There are two rules for success: 1) Never tell everything you know.</i>
-<br><br>
-― Roger H. Lincoln
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive - My Files & Texts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: #f5f5f5;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid #f5f5f5;
+            padding-bottom: 20px;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        
+        header p {
+            font-size: 1em;
+            color: #dcdcdc;
+        }
+        
+        .subject-group {
+            margin-bottom: 40px;
+        }
+
+        .group-title {
+            font-size: 1.8em;
+            margin-bottom: 18px;
+            color: #ffffff;
+            border-bottom: 1px solid #444444;
+            padding-bottom: 8px;
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .subject-card {
+            background: #111111;
+            border: 1px solid #444444;
+            padding: 24px;
+            transition: background 0.2s, transform 0.2s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .subject-card:hover {
+            background: #1c1c1c;
+            transform: translateY(-3px);
+        }
+        
+        .subject-card a {
+            text-decoration: none;
+            color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .subject-card h2 {
+            margin-bottom: 10px;
+            font-size: 1.4em;
+            font-weight: bold;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .subject-card p {
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #c8c8c8;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            border-top: 2px solid #f5f5f5;
+            padding-top: 20px;
+            font-size: 0.9em;
+            color: #c4c4c4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Archive</h1>
+            <p id="archiveSubtitle">All files and texts organized by folder</p>
+        </header>
+        
+        <div id="subjectGroups">
+            <!-- Subject groups will be populated from subject-titles.js -->
+        </div>
+        
+        <footer>
+            <p id="footerText">SchulArchiv - Banaaaniel</p>
+        </footer>
+    </div>
+    <script src="./text.js"></script>
+    <script src="./subject-titles.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('subjectGroups');
+            if (!container || !window.subjectTitles) return;
+
+            container.innerHTML = '';
+            const typeOrder = { 'Leistungskurs': 0, 'Basisfach': 1, 'Wahlfach': 2 };
+            const typeLabels = {
+                'Leistungskurs': 'Leistungskurse',
+                'Basisfach': 'Basisfächer',
+                'Wahlfach': 'Wahlfächer'
+            };
+
+            const sorted = [...window.subjectTitles].sort((a, b) => {
+                const typeCompare = (typeOrder[a.type] || 999) - (typeOrder[b.type] || 999);
+                return typeCompare !== 0 ? typeCompare : 0;
+            });
+
+            const groups = sorted.reduce((acc, subject) => {
+                const key = subject.type || 'Andere';
+                if (!acc[key]) acc[key] = [];
+                acc[key].push(subject);
+                return acc;
+            }, {});
+
+            Object.keys(typeOrder).concat(Object.keys(groups).filter(type => !(type in typeOrder)))
+                .forEach(type => {
+                    const items = groups[type];
+                    if (!items || !items.length) return;
+
+                    const group = document.createElement('section');
+                    group.className = 'subject-group';
+
+                    const heading = document.createElement('h2');
+                    heading.className = 'group-title';
+                    heading.textContent = typeLabels[type] || type;
+
+                    const grid = document.createElement('div');
+                    grid.className = 'subjects-grid';
+
+                    items.forEach(subject => {
+                        const card = document.createElement('div');
+                        card.className = 'subject-card';
+
+                        const link = document.createElement('a');
+                        link.href = `${subject.folder}/index.html`;
+
+                        const title = document.createElement('h2');
+                        title.textContent = subject.title;
+
+                        const subtitle = document.createElement('p');
+                        subtitle.textContent = subject.subtitle || '';
+
+                        link.appendChild(title);
+                        link.appendChild(subtitle);
+                        card.appendChild(link);
+                        grid.appendChild(card);
+                    });
+
+                    group.appendChild(heading);
+                    group.appendChild(grid);
+                    container.appendChild(group);
+                });
+
+            if (window.sharedText) {
+                document.getElementById('archiveSubtitle').textContent = window.sharedText.archiveSubtitle || document.getElementById('archiveSubtitle').textContent;
+                document.getElementById('footerText').textContent = window.sharedText.footer || document.getElementById('footerText').textContent;
+            }
+        });
+    </script>
+</body>
 </html>
