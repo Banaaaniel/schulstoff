@@ -14,4 +14,14 @@ window.subjectItems = [
     //     type: 'folder',
     //     path: 'resources/index.html'
     // }
+     {
+        name: 'Versailler Vertrag',
+        type: 'pdf',
+        path: 'versailler-vertrag-aufgabe.pdf'
+    },
+    {
+        name: 'Urkatastrophe',
+        type: 'folder',
+        path: 'urkatastrophe/index.html'
+    }
 ];
