@@ -14,4 +14,19 @@ window.subjectItems = [
     //     type: 'folder',
     //     path: 'resources/index.html'
     // }
+    {
+        name: 'Urkatastrophe Aufgabe',
+        type: 'pdf',
+        pathe: 'urkatastrophe.pdf'
+    },
+    {
+        name: 'Urkatastrophe Quellen',
+        type: 'pdf',
+        pathe: 'urkatastrophe-quellen.pdf'
+    },
+    {
+        name: 'Urkatastrophe Sicherung',
+        type: 'pdf',
+        pathe: 'urkatastrophe-sicherung.pdf'
+    },
 ];
