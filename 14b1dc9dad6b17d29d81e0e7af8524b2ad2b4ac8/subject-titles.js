@@ -41,7 +41,7 @@ window.subjectTitles = [
         folder: 'abitur2026-bfg',
         type: 'Basisfach',
         title: 'Geschichte',
-        subtitle: '(missing)'
+        subtitle: '(in progress)'
     },
     {
         folder: 'abitur2026-bfgeo',
