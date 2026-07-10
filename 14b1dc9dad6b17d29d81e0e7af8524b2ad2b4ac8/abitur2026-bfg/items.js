@@ -17,36 +17,36 @@ window.subjectItems = [
     {
         name: 'Erster Weltkrieg',
         type: 'folder',
-        pathe: 'erster-weltkrieg/index.html'
+        path: 'erster-weltkrieg/index.html'
     },
     {
         name: 'Zweiter Weltkrieg',
         type: 'folder',
-        pathe: 'zweiter-weltkrieg/index.html'
+        path: 'zweiter-weltkrieg/index.html'
     },
     {
         name: 'Herrschaftsmodelle 20. Jahrhundert',
         type: 'folder',
-        pathe: 'herrschaftsmodelle-20jh/index.html'
+        path: 'herrschaftsmodelle-20jh/index.html'
     },
     {
         name: 'Industrialisierung',
         type: 'folder',
-        pathe: 'industrialisierung/index.html'
+        path: 'industrialisierung/index.html'
     },
     {
         name: 'West und Osteuropa nach 1945',
         type: 'folder',
-        pathe: 'west-osteuropa-nach-1945/index.html'
+        path: 'west-osteuropa-nach-1945/index.html'
     },
     {
         name: 'Methoden und Arbeitsweisen',
         type: 'folder',
-        pathe: 'methoden-und-arbeiten/index.html'
+        path: 'methoden-und-arbeiten/index.html'
     },
     {
         name: 'Klausuren und Abitur',
         type: 'folder',
-        pathe: 'klausuren-abitur/index.html'
+        path: 'klausuren-abitur/index.html'
     }
 ];
