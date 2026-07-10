@@ -13,5 +13,55 @@ window.subjectItems = [
     //     name: 'Resources',
     //     type: 'folder',
     //     path: 'resources/index.html'
-    // }
+    // },
+    {
+        name: 'Aufgaben',
+        type: 'folder',
+        path: 'aufgaben/index.html'
+    },
+    {
+        name: 'Weimarer Republik',
+        type: 'folder',
+        path: 'weimarer-republik/index.html'
+    },
+    {
+        name: 'Dolchstoßlegende Bildquellen',
+        type: 'pdf',
+        path: 'dolchstosslegende-bildquellen.pdf'
+    },
+    {
+        name: 'Dolchstoßlegende Textquellen',
+        type: 'pdf',
+        path: 'dolchstosslegende-quellen.pdf'
+    },
+    {
+        name: 'Durchbruch Demokratie Sicherungsblatt',
+        type: 'pdf',
+        path: 'durchbruch-demokratie.pdf'
+    },
+    {
+        name: 'Vom Kaiserreich zur Weimarer Republik Textquellen',
+        type: 'pdf',
+        path: 'kaiserreich-zu-weimar-quelle.pdf'
+    },
+    {
+        name: 'Sicherung Dolchstoßlegende',
+        type: 'pdf',
+        path: 'sicherung-dolchstosslegende.pdf'
+    },
+    {
+        name: 'Sicherung Durchbruch Demokratie',
+        type: 'pdf',
+        path: 'sicherung-durchbruch-demokratie.pdf'
+    },
+    {
+        name: 'Sicherung Weimarer Verfassung',
+        type: 'pdf',
+        path: 'sicherung-weimarer-verfassung.pdf'
+    },
+    {
+        name: 'Versailler Vertrag Textquellen',
+        type: 'pdf',
+        path: 'versailler-vertrag-quellen.pdf'
+    }
 ];
