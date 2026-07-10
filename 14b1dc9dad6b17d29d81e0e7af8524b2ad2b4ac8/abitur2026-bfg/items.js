@@ -20,6 +20,11 @@ window.subjectItems = [
         pathe: 'erster-weltkrieg/index.html'
     },
     {
+        name: 'Zweiter Weltkrieg',
+        type: 'folder',
+        pathe: 'zweiter-weltkrieg/index.html'
+    },
+    {
         name: 'Herrschaftsmodelle 20. Jahrhundert',
         type: 'folder',
         pathe: 'herrschaftsmodelle-20jh/index.html'
@@ -30,9 +35,9 @@ window.subjectItems = [
         pathe: 'industrialisierung/index.html'
     },
     {
-        name: 'Klausuren und Abitur',
+        name: 'West und Osteuropa nach 1945',
         type: 'folder',
-        pathe: 'klausuren-abitur/index.html'
+        pathe: 'west-osteuropa-nach-1945/index.html'
     },
     {
         name: 'Methoden und Arbeitsweisen',
@@ -40,13 +45,8 @@ window.subjectItems = [
         pathe: 'methoden-und-arbeiten/index.html'
     },
     {
-        name: 'Zweiter Weltkrieg',
+        name: 'Klausuren und Abitur',
         type: 'folder',
-        pathe: 'zweiter-weltkrieg/index.html'
-    },
-    {
-        name: 'West und Osteuropa nach 1945',
-        type: 'folder',
-        pathe: 'west-osteuropa-nach-1945/index.html'
+        pathe: 'klausuren-abitur/index.html'
     }
 ];
